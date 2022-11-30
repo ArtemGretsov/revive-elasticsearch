@@ -12,7 +12,11 @@ func main() {
 	res, err := http.Get(Host)
 	if err != nil || res.StatusCode >= 500 {
 		restart()
+		
+		return
 	}
+	
+	fmt.Println("It works!")
 }
 
 func restart() {
